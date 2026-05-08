@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 悬浮窗布局文件 -->
+<!-- 半透明黑色背景，CC表示80%不透明度 -->
+<!-- 内边距16dp -->
+<!-- 内容居中向左 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/floating_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/floating_window_background"
+    android:padding="8dp"
+    android:gravity="center">
+
+    <!-- 时间显示 -->
+    <!-- 白色文字，字体大小18sp，粗体 -->
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🕛 00:00:00"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="5dp"
+        android:gravity="center" />
+
+    <!-- 电量显示 -->
+    <!-- 初始为绿色，字体大小16sp，粗体 -->
+    <TextView
+        android:id="@+id/tv_battery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="🔋 100%"
+        android:textColor="#4CAF50"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

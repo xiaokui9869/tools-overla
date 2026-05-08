@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 悬浮窗圆角背景 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- 半透明黑色背景，CC表示80%不透明度 -->
+    <solid android:color="#CC000000" />
+    <!-- 圆角25度 -->
+    <corners android:radius="25dp" />
+</shape>

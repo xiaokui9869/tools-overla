@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- AndroidManifest.xml：应用清单文件，声明应用的组件、权限和配置 -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 悬浮窗权限：允许应用在其他应用之上显示窗口 -->
+    <!-- Android 16 (API 36) 中，此权限仍然需要 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <!-- 震动权限：允许应用控制手机震动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <!-- 前台服务权限：Android 9.0+ 需要此权限来启动前台服务 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    
+    <!-- Android 14+ 需要声明前台服务类型 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication">
+        
+        <!-- 主活动：应用启动入口 -->
+        <activity
+            android:name="com.tools.overlay.xiaokui.MainActivity"
+            android:exported="true"
+            android:label="小葵悬浮助手"
+            android:theme="@style/Theme.MyApplication">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- 悬浮窗服务：负责创建和管理悬浮窗 -->
+        <!-- Android 14+ 需要声明 foregroundServiceType -->
+        <service
+            android:name="com.tools.overlay.xiaokui.FloatingWindowService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse" />
+            
+    </application>
+
+</manifest>
